@@ -9,4 +9,4 @@ public class AflorarApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AflorarApplication.class, args);
 	}
-}
+}	
