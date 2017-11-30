@@ -7,14 +7,18 @@ export let config: Config = {
     SELENIUM_PROMISE_MANAGER: false,
 
     capabilities: {
-        browserName: 'chrome'
+        browserName: 'chrome',
+        version: "62.0.3202.62",
+        chromeOptions: {
+            binary: "/home/adilsonangelo/.local/bin/google-chrome-stable"
+        }
     },
 
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     specs: [
-        '../../features/'
+        '../../features/*.feature'
     ],
 
     onPrepare: () => {
