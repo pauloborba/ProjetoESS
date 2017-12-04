@@ -1,0 +1,42 @@
+<html (mousemove)="duplicado()">
+  
+  <table>
+  <tr>
+     <td><label>Nome </label></td>
+     <td><input [(ngModel)]="clienteDomain.nome" name="namebox"></td>
+     <td><label>email </label></td>
+     <td><input [(ngModel)]="clienteDomain.email" name="emailbox"></td>
+     <td><label>senha </label></td>
+     <td><input [(ngModel)]="clienteDomain.senha" name="senhabox"></td>
+     <td><label>cpf </label></td>
+     <td><input [(ngModel)]="clienteDomain.cpf" name="cpfbox"></td>
+     <td><label>telefone </label></td>
+     <td><input [(ngModel)]="clienteDomain.telefone" name="telefonebox"></td>
+     <td><label>dataDeNascimento </label></td>
+     <td><input [(ngModel)]="clienteDomain.dataDeNascimento" name="databox"></td>
+     <td><label>Sexo </label></td>
+     <td><input [(ngModel)]="clienteDomain.sexo" name="sexobox"></td>
+     <td><label>Bairro </label></td>
+     <td><input [(ngModel)]="enderecoDomain.bairro" name="bairrobox"></td>
+     <td><label>Rua </label></td>
+     <td><input [(ngModel)]="enderecoDomain.rua" name="ruabox"></td>
+     <td><label>Número </label></td>
+     <td><input [(ngModel)]="enderecoDomain.numero" name="numerobox"></td>
+     <td><label>Complemento </label></td>
+     <td><input [(ngModel)]="enderecoDomain.complemento" name="complementobox"></td>
+     <td><label>Cidade </label></td>
+     <td><input [(ngModel)]="enderecoDomain.cidade" name="cidadebox"></td>
+     <td><label>Estado </label></td>
+     <td><input [(ngModel)]="enderecoDomain.estado" name="estadobox"></td>
+     <td><label>Sigla </label></td>
+     <td><input [(ngModel)]="enderecoDomain.sigla" name="siglabox"></td>
+
+     <td><button (click)="criarCliente(clienteDomain)">Adicionar</button></td>
+  </tr>
+  
+  </table>
+  
+ 
+  
+  </html>
+  
