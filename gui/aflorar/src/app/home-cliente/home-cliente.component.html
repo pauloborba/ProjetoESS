@@ -1,0 +1,42 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li *ngFor="let categoria of categorias">
+    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+    <label for="filled-in-box">{{categoria.nome}}</label>
+  </li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+  <li *ngFor="let marca of marcas"><a>{{marca.nome}}</a></li>
+</ul>
+<nav>
+    <div class="nav-wrapper">
+      <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+        <!--<li><a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="dropdown1">Categorias<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="dropdown2">Marcas<i class="material-icons right">arrow_drop_down</i></a></li>-->
+        
+    </div>
+  </nav>
+<div class="row">
+  <div *ngFor="let produto of produtos" class="col s2">
+    <div class="card hoverable">
+      <div class="card-image">
+        <span id="precoProduto" class="btn-floating btn-large btn-price waves-effect waves-light pink accent-2">${{ produto.preco }}</span>
+        <img id="imagemProduto" src="assets/{{produto.caminhoImagem}}">
+        <a id="adicionarCarrinho" class="btn-floating halfway-fab waves-effect waves-light red" (click)="adicionarProdutoCarrinho(produto)"><i class="material-icons">add_shopping_cart</i></a>
+      </div>
+      <div class="divider card-separator"></div>
+      <div class="card-content mouse-hover">
+        <div class="nome-produto activator">
+          <span id="nomeProduto" class="activator">{{produto.nome}}</span><i class="material-icons right">more_vert</i>
+        </div>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">{{produto.nome}}<i class="material-icons right">close</i></span>
+        <p>{{produto.descricao}}</p>
+      </div>
+    </div>
+  </div>
+</div>
