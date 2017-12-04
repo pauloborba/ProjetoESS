@@ -1,9 +1,9 @@
-<h2>
+<h4 style="text-align:center">
   Cadastrar novo produto
-</h2>
+</h4>
 
 <div class="row">
-  <form class="col s12" (ngSubmit)="addProduto()">
+  <form class="col s12" (ngSubmit)="addNewProduto()">
     <div class="row">
       <div class="input-field col s6">
         <label for="nome">Nome</label>
@@ -12,7 +12,7 @@
       </div>
 
       <div class="input-field col s6">
-        <textarea id="descricao" class="materialize-textarea" [(ngModel)]="descricao" name="descricao" ></textarea>
+        <textarea id="descricao" class="materialize-textarea validate" [(ngModel)]="descricao" name="descricao" required></textarea>
         <label for="descricao">Descrição</label>
       </div>
     </div>
@@ -20,16 +20,16 @@
     <br><br>
     
     <div class="row">
-      <div class="input-field col s6 ">
-        <select class="" name="categorias" materialize="material_select" multiple id="categorias" [(ngModel)]="categorias" required>
+      <div class="input-field col s6">
+        <select class="" name="categorias_selected" materialize="material_select" multiple id="categorias_selected" [(ngModel)]="categorias_selected" required>
           <option value="0" disabled selected>Selecione categorias</option>
           <option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.nome }}</option>
         </select>
       </div>
       <div class="input-field col s6">
-        <select id="marca" name="marca" materialize="material_select" (change)="setMarca($event.target.value);" required>
-          <option *ngFor="let marca of marcas" [value]="marca.id">{{ marca.nome }}</option>
+        <select id="marca" name="marca" materialize="material_select" (change)="setMarca($event.target.value)" required>
           <option value="0" disabled selected>Selecione a marca</option>
+          <option *ngFor="let marca of marcas" [value]="marca.id">{{ marca.nome }}</option>
         </select>
       </div>
     </div>
@@ -39,22 +39,22 @@
     <div class="row">
       <div class="input-field col s3">
         <label for="preco">Preço (R$)</label>
-        <input id="preco" type="number" class="validate" [(ngModel)]="preco" name="preco" min="0" step="0.01" placeholder="R$ 150.00" required/>
+        <input id="preco" type="number" [(ngModel)]="preco" name="preco" min="0" step="0.01" placeholder="150.00" />
         <span class="validity"></span>
       </div>
       <div class="col s1"></div>
       <div class="input-field col s3">
         <label for="quantidade">Quantidade</label>
-        <input id="quantidade" type="number" class="validate" [(ngModel)]="quantidade" name="quantidade" min="0" step="1" placeholder="15" required/>
+        <input id="quantidade" type="number" [(ngModel)]="quantidade" name="quantidade" min="0" step="1" placeholder="15"/>
         <span class="validity"></span>
       </div>
       <div class="col s1"></div>      
       <div class="input-field col s4">
         <label for="imagem">Imagem</label>
         <br><br>
-        <img id="preview" [src]="preview" alt="" /><br>
-        <input type="file" name="imagem" id="imagem" accept="image/jpeg, image/x-png" (change)="previewImage($event)" required />
-        <span class="validity"></span>        
+        <img id="preview" [src]="preview" class="circle responsive-img" alt="" /><br>
+        <input type="file" name="imagem" id="imagem" accept="image/jpeg, image/x-png" (change)="setImagem($event.target);previewImage($event)" required />
+        <span class="validity"></span>
       </div>
     </div>
 

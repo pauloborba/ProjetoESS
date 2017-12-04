@@ -5,9 +5,9 @@ export class Produto {
     id: string;
     nome: string;
     marca: Marca;
-    categoria: Categoria;
+    categorias: Categoria[];
     descricao: string;
     preco: number;
     quantidade: number;
-    caminhoImagem: string;
+    imagem;
 }

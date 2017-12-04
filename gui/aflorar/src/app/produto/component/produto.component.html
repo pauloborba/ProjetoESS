@@ -1,3 +1,54 @@
-<p>
-  produto works!
-</p>
+<h4 style="text-align:center">
+  Produtos
+</h4>
+<br><br>
+<div class="divider"></div>
+
+<div>
+  <table class="highlight centered">
+    <thead>
+      <tr>
+        <th>
+          <!-- IMAGEM -->
+        </th>
+        <th>Nome</th>
+        <th>Marca</th>
+        <th>Preço</th>
+        <th>Categorias</th>
+        <th>Quantidade em estoque</th>
+        <th>Descrição</th>
+        <th></th> 
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let produto of produtos">
+          <td>
+            <!-- IMAGEM -->
+            <img src="" class="circle responsive-img" alt="">
+          </td>
+          <td><input id="nome-{{produto.id}}" class="validate" type="text" value="{{produto.nome}}" (change)="updateProduto(produto, 1)" required></td>
+          <td>
+              <select id="marca-{{produto.id}}" name="marca" materialize="material_select" (change)="updateProduto(produto, 2)" required>
+                <option value="0" disabled selected>{{ produto.marca.nome }}</option>
+                <option *ngFor="let marca of marcas" [value]="marca.id">{{ marca.nome }}</option>
+              </select>
+          </td>
+          <td><input id="preco-{{produto.id}}" class="validate" type="number" min="0" step="0.01" value="{{produto.preco}}" (change)="updateProduto(produto, 3)" required></td>
+          <td id="categorias-{{produto.id}}"><a (click)="modal()">{{ getCategorias(produto.categorias) }}</a></td>
+          <td><input id="quantidade-{{produto.id}}" class="validate" type="number" min="0" step="1" value="{{produto.quantidade}}" (change)="updateProduto(produto, 5)" required></td>
+          <td><textarea id="descricao-{{produto.id}}" class="materialize-textarea validate flow-text" (change)="updateProduto(produto, 6)" required>{{ produto.descricao }}</textarea></td>
+          <td class="col s2"><a (click)="deleteProduto(produto)"><i class="material-icons">delete</i></a></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
