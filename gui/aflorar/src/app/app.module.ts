@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MaterializeModule } from 'angular2-materialize';
 
@@ -13,14 +15,16 @@ import { ProdutoService } from './produto/service/produto.service';
 import { CategoriaService } from './categoria/service/categoria.service';
 import { MarcaService } from './marca/service/marca.service';
 import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
-// import { NavBarComponent } from './nav-bar/component/nav-bar.component';
+import { DashboardComponent } from './dashboard/component/dashboard.component';
+import { NavBarComponent } from './nav-bar/component/nav-bar.component';
 
 const appRoutes: Routes = [
   { path: 'produtos', component: ProdutoComponent },
   { path: 'produtos/novo', component: ProdutoFormComponent },
   { path: 'categorias', component: CategoriaComponent },
   { path: 'marcas', component: MarcaComponent },
- // { path: '**', component: PageNotFoundComponent }
+  { path: 'dashboard', component: DashboardComponent },
+//  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -30,7 +34,8 @@ const appRoutes: Routes = [
     MarcaComponent,
     CategoriaComponent,
     ProdutoFormComponent,
-    // NavBarComponent,
+    DashboardComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,12 +43,14 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(
       appRoutes
-    )
+    ),
+    HttpModule,
+    HttpClientModule,
   ],
   providers: [
     ProdutoService,
     MarcaService,
-    CategoriaService
+    CategoriaService,
   ],
   bootstrap: [AppComponent]
 })
