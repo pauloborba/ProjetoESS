@@ -1,0 +1,18 @@
+<nav>
+  <div class="nav-wrapper">
+    <ul class="left">
+      <li (click)="pageClick($event.target)" *ngIf="getCurrentPage() == 'produtos'"><a class="btn-floating" style="background-color:blueviolet"><i id="produto-form" class="material-icons">add</i></a>Novo</li>
+    </ul>
+    <ul class="right" id="pages" >
+      <li class="waves-effect" (click)="pageClick($event.target)"><a id="produtos">Produtos</a></li>
+      <li class="waves-effect" (click)="pageClick($event.target)"><a id="marcas">Marcas</a></li>
+      <li class="waves-effect" (click)="pageClick($event.target)"><a id="categorias">Categorias</a></li>
+    </ul>
+  </div>
+</nav>
+
+<app-produto-form *ngIf="getCurrentPage() == 'produto-form'"></app-produto-form>
+<app-produto *ngIf="getCurrentPage() == 'produtos'"></app-produto>
+<app-marca *ngIf="getCurrentPage() == 'marcas'"></app-marca>
+<app-categoria *ngIf="getCurrentPage() == 'categorias'"></app-categoria>
+<router-outlet></router-outlet>
