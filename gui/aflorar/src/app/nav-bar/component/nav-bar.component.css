@@ -1,0 +1,28 @@
+.nav-wrapper{
+    background-color: rgba(100, 0, 150, 1);
+  }
+  
+  .side-nav-link{
+    color: rgba(100, 0, 150, 1) !important;
+  }
+  
+  .brand-logo {
+      height: inherit;
+      width: inherit;
+      border-radius: 50px;
+      background-color: #f7f8ff;
+      margin-left: 10px;
+  }
+  
+  a{
+    color: white;
+  }
+  
+  a:visited{
+    color: rgb(252, 235, 255);
+  }
+
+  .aflorar-logo{
+    background: transparent;
+  }
+  
