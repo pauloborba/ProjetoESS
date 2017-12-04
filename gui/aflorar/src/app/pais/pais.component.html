@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="input-field col s6">
+    <input [(ngModel)]="paisDomain.nome" id="paisDomain" name="paisDomain.nome" type="text" class="validate">
+    <label class="active" for="paisDomain">Nome do Pais</label>
+    <label *ngIf="nomeDuplicado"> Já existe um pais com esse nome</label>
+  </div>
+  
+</div>
+<button class="btn waves-effect waves-light" type="submit" name="action" (click)="criarPais(paisDomain)">Salvar
+  <i class="material-icons right">send</i>
+</button>
