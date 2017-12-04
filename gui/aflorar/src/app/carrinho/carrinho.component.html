@@ -1,14 +1,13 @@
-<div class="row">
-  <div class="col s2">
-    <div class="card">
-      <div class="card-image">
-        <a href="#" class="btn-floating btn-large btn-price waves-effect waves-light  pink accent-2">$189</a>
-        <img src="assets/iphone.png">
-        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add_shopping_cart</i></a>
-      </div>
-      <div class="card-content">
-        <p>Apple MacBook Pro A1278 13</p>
-      </div>
-    </div>
+<h3><i class="material-icons medium">shopping_cart</i> Carrinho</h3>
+<div class="">
+  <div class="row" *ngFor="let produto of produtos">
+    <img src="assets/{{produto.caminhoImagem}}" class="col s1" alt="imgProduto">
+    <span class="col s3 nome-produto">{{produto.nome}}</span>
+    <i class="material-icons nome-produto text-red col s1">indeterminate_check_box</i>
+    <input type="text" class="col s1 carrinho-input" value="1">
+    <i class="material-icons nome-produto text-green col s1">add_box</i>
+    <span class="col s2 nome-produto">R$ {{produto.preco}}</span>
   </div>
+  <span>Preço total: R$ {{precoTotal}}</span>
+  <a class="waves-effect waves-light btn"><i class="material-icons right">near_me</i>Checkout</a>
 </div>
