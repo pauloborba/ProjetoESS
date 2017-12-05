@@ -1,0 +1,13 @@
+<h3><i class="material-icons medium">shopping_cart</i> Carrinho</h3>
+<div class="">
+  <div class="row" *ngFor="let produto of produtos">
+    <img src="assets/{{produto.caminhoImagem}}" class="col s1" alt="imgProduto">
+    <span class="col s3 nome-produto">{{produto.nome}}</span>
+    <i class="material-icons nome-produto text-red col s1">indeterminate_check_box</i>
+    <input type="text" class="col s1 carrinho-input" value="1">
+    <i class="material-icons nome-produto text-green col s1">add_box</i>
+    <span class="col s2 nome-produto">R$ {{produto.preco}}</span>
+  </div>
+  <span>Preço total: R$ {{precoTotal}}</span>
+  <a class="waves-effect waves-light btn"><i class="material-icons right">near_me</i>Checkout</a>
+</div>

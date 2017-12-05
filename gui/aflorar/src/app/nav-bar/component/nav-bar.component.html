@@ -1,0 +1,19 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="/home" class="brand-logo"><img class="brand-logo aflorar-logo" src="assets/logo.png" alt="Aflorar"></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a routerLink="/login" *ngIf="!loggedIn()" routerLinkActive="active">Log In</a></li>
+      <li><a *ngIf="loggedIn()" (click)="logOut()">Log Out</a></li>
+      <li><a routerLink="/carrinho" routerLinkActive="active"><i class="material-icons">shopping_cart</i></a></li>
+      <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+    </ul>
+    <ul class="right hide-on-large-only">
+        <li><a href="#" data-activates="side-nav" class="button-collapse" materialize="sideNav"><i class="material-icons">menu</i></a></li>
+    </ul>
+    <ul id="side-nav" class="side-nav">
+        <li><a class="side-nav-link" routerLink="/login" routerLinkActive="active">Log In</a></li>
+        <li><a class="side-nav-link" routerLink="/carrinho" routerLinkActive="active"><i class="material-icons">shopping_cart</i></a></li>
+        <li><a class="side-nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+      </ul>
+  </div>
+</nav>

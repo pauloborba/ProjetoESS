@@ -1,0 +1,17 @@
+.mouse-hover{
+    cursor: pointer;
+}
+
+.card-separator{
+    margin-top: 10px;
+    margin-bottom: -15px;
+}
+
+.nome-produto{
+    padding-top: 10px;
+    margin-bottom: -5px;
+}
+
+.nav-wrapper{
+    background-color: rgba(100, 0, 150, 1);
+}
